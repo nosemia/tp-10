@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+class Persona {
+private:
+    string nombre;
+    int edad;
+public:
+    Persona(); 
+    void imprimirDatos();
+    void esMayorDeEdad();
+};
+
+Persona::Persona() {
+    cout << "Ingrese nombre: ";
+    cin >> nombre;
+    cout << "Ingrese edad: ";
+    cin >> edad;
+}
+
+void Persona::imprimirDatos() {
+    cout << "Nombre: " << nombre << endl;
+    cout << "Edad: " << edad << endl;
+}
+
+void Persona::esMayorDeEdad() {
+    if (edad >= 18)
+        cout << nombre << " es mayor de edad." << endl;
+    else
+        cout << nombre << " no es mayor de edad." << endl;
+}
+
+int main() {
+    Persona p1;
+    p1.imprimirDatos();
+    p1.esMayorDeEdad();
+    return 0;
+}
