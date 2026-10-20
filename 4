@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+
+class Socio {
+private:
+    string nombre;
+    int antiguedad;
+public:
+    Socio();
+    string getNombre();
+    int getAntiguedad();
+};
+
+Socio::Socio() {
+    cout << "Nombre del socio: ";
+    cin >> nombre;
+    cout << "Antiguedad (en anios): ";
+    cin >> antiguedad;
+}
+
+string Socio::getNombre() {
+    return nombre;
+}
+
+int Socio::getAntiguedad() {
+    return antiguedad;
+}
+
+class Club {
+private:
+    Socio socio1, socio2, socio3;
+public:
+    void socioMasAntiguo();
+};
+
+void Club::socioMasAntiguo() {
+    Socio mayor = socio1;
+    if (socio2.getAntiguedad() > mayor.getAntiguedad())
+        mayor = socio2;
+    if (socio3.getAntiguedad() > mayor.getAntiguedad())
+        mayor = socio3;
+    cout << "El socio con mayor antiguedad es: " << mayor.getNombre() << endl;
+}
+
+int main() {
+    Club c1;
+    c1.socioMasAntiguo();
+    return 0;
+}
